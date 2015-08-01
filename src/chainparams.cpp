@@ -80,9 +80,9 @@ public:
         consensus.fPowAllowMinDifficultyBlocks = false;
 
         consensus.nAuxpowChainId = 0x0001;
-        consensus.nAuxpowStartHeight = 19200;
+        consensus.nAuxpowStartHeight = 0;
         consensus.fStrictChainId = true;
-        consensus.nLegacyBlocksBefore = 19200;
+        consensus.nLegacyBlocksBefore = 0;
 
         /** 
          * The message start string is designed to be unlikely to occur in normal data.
