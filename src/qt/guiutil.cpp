@@ -107,7 +107,7 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
 #if QT_VERSION >= 0x040700
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a Kcoin address (e.g. %1)").arg("1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L"));
+    widget->setPlaceholderText(QObject::tr("Enter a Kcoin address (e.g. %1)").arg("KBD1fbNb9DbHQ2A9N5qN5g72UseyGcpfX8"));
 #endif
     widget->setValidator(new KcoinAddressEntryValidator(parent));
     widget->setCheckValidator(new KcoinAddressCheckValidator(parent));
