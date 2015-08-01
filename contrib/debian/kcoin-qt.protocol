@@ -1,0 +1,11 @@
+[Protocol]
+exec=kcoin-qt '%u'
+protocol=kcoin
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

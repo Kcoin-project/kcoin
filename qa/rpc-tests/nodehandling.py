@@ -7,7 +7,7 @@
 # Test node handling
 #
 
-from test_framework.test_framework import BitcoinTestFramework
+from test_framework.test_framework import KcoinTestFramework
 from test_framework.util import *
 import base64
 
@@ -20,7 +20,7 @@ try:
 except ImportError:
     import urlparse
 
-class NodeHandlingTest (BitcoinTestFramework):
+class NodeHandlingTest (KcoinTestFramework):
     def run_test(self):
         ###########################
         # setban/listbanned tests #

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_SERIALIZE_H
-#define BITCOIN_SERIALIZE_H
+#ifndef KCOIN_SERIALIZE_H
+#define KCOIN_SERIALIZE_H
 
 #include "compat/endian.h"
 
@@ -857,4 +857,4 @@ public:
     }
 };
 
-#endif // BITCOIN_SERIALIZE_H
+#endif // KCOIN_SERIALIZE_H

@@ -1,0 +1,22 @@
+[Unit]
+Description=Kcoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=kcoin
+Group=kcoin
+
+Type=forking
+PIDFile=/var/lib/kcoind/kcoind.pid
+ExecStart=/usr/bin/kcoind -daemon -pid=/var/lib/kcoind/kcoind.pid \
+-conf=/etc/kcoin/kcoin.conf -datadir=/var/lib/kcoind -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,3 @@
+debian/manpages/kcoind.1
+debian/manpages/kcoin.conf.5
+debian/manpages/kcoin-cli.1

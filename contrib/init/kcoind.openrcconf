@@ -1,0 +1,33 @@
+# /etc/conf.d/kcoind: config file for /etc/init.d/kcoind
+
+# Config file location
+#KCOIND_CONFIGFILE="/etc/kcoin/kcoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $KCOIND_USER)
+#KCOIND_PIDDIR="/var/run/kcoind"
+
+# What filename to give the pidfile
+#KCOIND_PIDFILE="${KCOIND_PIDDIR}/kcoind.pid"
+
+# Where to write kcoind data (be mindful that the blockchain is large)
+#KCOIND_DATADIR="/var/lib/kcoind"
+
+# User and group to own kcoind process
+#KCOIND_USER="kcoin"
+#KCOIND_GROUP="kcoin"
+
+# Path to kcoind executable
+#KCOIND_BIN="/usr/bin/kcoind"
+
+# Nice value to run kcoind under
+#KCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+KCOIND_OPTS="-disablewallet"
+
+# The timeout in seconds OpenRC will wait for kcoind to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+KCOIND_SIGTERM_TIMEOUT=60

@@ -4,8 +4,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file license.txt or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_AUXPOW_H
-#define BITCOIN_AUXPOW_H
+#ifndef KCOIN_AUXPOW_H
+#define KCOIN_AUXPOW_H
 
 #include "consensus/params.h"
 #include "primitives/pureheader.h"
@@ -164,4 +164,4 @@ public:
 
 };
 
-#endif // BITCOIN_AUXPOW_H
+#endif // KCOIN_AUXPOW_H

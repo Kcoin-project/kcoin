@@ -1,0 +1,6 @@
+usr/local/bin/kcoin-qt usr/bin
+share/pixmaps/kcoin32.xpm usr/share/pixmaps
+share/pixmaps/kcoin16.xpm usr/share/pixmaps
+share/pixmaps/kcoin128.png usr/share/pixmaps
+debian/kcoin-qt.desktop usr/share/applications
+debian/kcoin-qt.protocol usr/share/kde4/services/

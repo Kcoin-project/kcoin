@@ -90,7 +90,7 @@ def mineBlock (header, target, ok):
 
 def doubleHashHex (data):
   """
-  Perform Bitcoin's Double-SHA256 hash on the given hex string.
+  Perform Kcoin's Double-SHA256 hash on the given hex string.
   """
 
   hasher = hashlib.sha256 ()

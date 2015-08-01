@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Kcoin
+Comment=Kcoin P2P Cryptocurrency
+Comment[fr]=Kcoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Kcoin, eşten eşe kriptografik sanal para birimi
+Exec=kcoin-qt %u
+Terminal=false
+Type=Application
+Icon=kcoin128
+MimeType=x-scheme-handler/kcoin;
+Categories=Office;Finance;

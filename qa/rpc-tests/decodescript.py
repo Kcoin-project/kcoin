@@ -3,10 +3,10 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-from test_framework.test_framework import BitcoinTestFramework
+from test_framework.test_framework import KcoinTestFramework
 from test_framework.util import *
 
-class DecodeScriptTest(BitcoinTestFramework):
+class DecodeScriptTest(KcoinTestFramework):
     """Tests decoding scripts via RPC command "decodescript"."""
 
     def setup_chain(self):

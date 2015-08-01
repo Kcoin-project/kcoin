@@ -17,7 +17,7 @@ overridden with the option `-rpccookiefile`.
 This is similar to Tor's CookieAuthentication: see
 https://www.torproject.org/docs/tor-manual.html.en
 
-This allows running bitcoind without having to do any manual configuration.
+This allows running kcoind without having to do any manual configuration.
 
 Low-level RPC API changes
 --------------------------

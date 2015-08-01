@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_WALLET_WALLET_H
-#define BITCOIN_WALLET_WALLET_H
+#ifndef KCOIN_WALLET_WALLET_H
+#define KCOIN_WALLET_WALLET_H
 
 #include "amount.h"
 #include "auxpow.h" // contains CMerkleTx
@@ -823,4 +823,4 @@ private:
     std::vector<char> _ssExtra;
 };
 
-#endif // BITCOIN_WALLET_WALLET_H
+#endif // KCOIN_WALLET_WALLET_H

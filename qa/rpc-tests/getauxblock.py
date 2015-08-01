@@ -5,15 +5,15 @@
 
 # Test the "getauxblock" merge-mining RPC interface.
 
-from test_framework.test_framework import BitcoinTestFramework
+from test_framework.test_framework import KcoinTestFramework
 from test_framework.util import *
 
 from test_framework import auxpow
 
-class GetAuxBlockTest (BitcoinTestFramework):
+class GetAuxBlockTest (KcoinTestFramework):
 
   def run_test (self):
-    BitcoinTestFramework.run_test (self)
+    KcoinTestFramework.run_test (self)
 
     # Generate a block so that we are not "downloading blocks".
     self.nodes[0].generate (1)

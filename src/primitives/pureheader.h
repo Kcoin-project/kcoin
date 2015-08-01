@@ -3,8 +3,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_PRIMITIVES_PUREHEADER_H
-#define BITCOIN_PRIMITIVES_PUREHEADER_H
+#ifndef KCOIN_PRIMITIVES_PUREHEADER_H
+#define KCOIN_PRIMITIVES_PUREHEADER_H
 
 #include "serialize.h"
 #include "uint256.h"
@@ -194,4 +194,4 @@ public:
     }
 };
 
-#endif // BITCOIN_PRIMITIVES_PUREHEADER_H
+#endif // KCOIN_PRIMITIVES_PUREHEADER_H

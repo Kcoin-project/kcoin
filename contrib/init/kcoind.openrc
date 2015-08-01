@@ -1,0 +1,92 @@
+#!/sbin/runscript
+
+# backward compatibility for existing gentoo layout 
+#
+if [ -d "/var/lib/kcoin/.kcoin" ]; then
+	KCOIND_DEFAULT_DATADIR="/var/lib/kcoin/.kcoin"
+else
+	KCOIND_DEFAULT_DATADIR="/var/lib/kcoind"
+fi
+
+KCOIND_CONFIGFILE=${KCOIND_CONFIGFILE:-/etc/kcoin/kcoin.conf}
+KCOIND_PIDDIR=${KCOIND_PIDDIR:-/var/run/kcoind}
+KCOIND_PIDFILE=${KCOIND_PIDFILE:-${KCOIND_PIDDIR}/kcoind.pid}
+KCOIND_DATADIR=${KCOIND_DATADIR:-${KCOIND_DEFAULT_DATADIR}}
+KCOIND_USER=${KCOIND_USER:-${KCOIN_USER:-kcoin}}
+KCOIND_GROUP=${KCOIND_GROUP:-kcoin}
+KCOIND_BIN=${KCOIND_BIN:-/usr/bin/kcoind}
+KCOIND_NICE=${KCOIND_NICE:-${NICELEVEL:-0}}
+KCOIND_OPTS="${KCOIND_OPTS:-${KCOIN_OPTS}}"
+
+name="Kcoin Core Daemon"
+description="Kcoin cryptocurrency P2P network daemon"
+
+command="/usr/bin/kcoind"
+command_args="-pid=\"${KCOIND_PIDFILE}\" \
+		-conf=\"${KCOIND_CONFIGFILE}\" \
+		-datadir=\"${KCOIND_DATADIR}\" \
+		-daemon \
+		${KCOIND_OPTS}"
+
+required_files="${KCOIND_CONFIGFILE}"
+start_stop_daemon_args="-u ${KCOIND_USER} \
+			-N ${KCOIND_NICE} -w 2000"
+pidfile="${KCOIND_PIDFILE}"
+
+# The retry schedule to use when stopping the daemon. Could be either
+# a timeout in seconds or multiple signal/timeout pairs (like
+# "SIGKILL/180 SIGTERM/300")
+retry="${KCOIND_SIGTERM_TIMEOUT}"
+
+depend() {
+	need localmount net
+}
+
+# verify
+# 1) that the datadir exists and is writable (or create it)
+# 2) that a directory for the pid exists and is writable
+# 3) ownership and permissions on the config file
+start_pre() {
+	checkpath \
+	-d \
+	--mode 0750 \
+	--owner "${KCOIND_USER}:${KCOIND_GROUP}" \
+	"${KCOIND_DATADIR}"
+
+	checkpath \
+	-d \
+	--mode 0755 \
+	--owner "${KCOIND_USER}:${KCOIND_GROUP}" \
+	"${KCOIND_PIDDIR}"
+
+	checkpath -f \
+	-o ${KCOIND_USER}:${KCOIND_GROUP} \
+	-m 0660 \
+	${KCOIND_CONFIGFILE}
+
+	checkconfig || return 1
+}
+
+checkconfig()
+{
+	if ! grep -qs '^rpcpassword=' "${KCOIND_CONFIGFILE}" ; then
+		eerror ""
+		eerror "ERROR: You must set a secure rpcpassword to run kcoind."
+		eerror "The setting must appear in ${KCOIND_CONFIGFILE}"
+		eerror ""
+		eerror "This password is security critical to securing wallets "
+		eerror "and must not be the same as the rpcuser setting."
+		eerror "You can generate a suitable random password using the following"
+		eerror "command from the shell:"
+		eerror ""
+		eerror "bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'"
+		eerror ""
+		eerror "It is also recommended that you also set alertnotify so you are "
+		eerror "notified of problems:"
+		eerror ""
+		eerror "ie: alertnotify=echo %%s | mail -s \"Kcoin Alert\"" \
+			"admin@foo.com"
+		eerror ""
+		return 1
+	fi
+}

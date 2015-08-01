@@ -7,12 +7,12 @@
 # Test the BIP66 changeover logic
 #
 
-from test_framework.test_framework import BitcoinTestFramework
+from test_framework.test_framework import KcoinTestFramework
 from test_framework.util import *
 import os
 import shutil
 
-class BIP66Test(BitcoinTestFramework):
+class BIP66Test(KcoinTestFramework):
 
     def setup_network(self):
         self.nodes = []
