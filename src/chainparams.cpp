@@ -101,14 +101,10 @@ public:
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x000000001828eef74b0cd42d875995b6095b745330e23655099af4b930f7257a"));
         assert(genesis.hashMerkleRoot == uint256S("0x07fac90f0d20b79dc36ebb75ae6ae199ea25e24e31e02921047d00938aa756fa"));
-/*
-        vSeeds.push_back(CDNSSeedData("kcoin.sipa.be", "seed.kcoin.sipa.be")); // Pieter Wuille
-        vSeeds.push_back(CDNSSeedData("bluematt.me", "dnsseed.bluematt.me")); // Matt Corallo
-        vSeeds.push_back(CDNSSeedData("dashjr.org", "dnsseed.kcoin.dashjr.org")); // Luke Dashjr
-        vSeeds.push_back(CDNSSeedData("kcoinstats.com", "seed.kcoinstats.com")); // Christian Decker
-        vSeeds.push_back(CDNSSeedData("xf2.org", "bitseed.xf2.org")); // Jeff Garzik
-        vSeeds.push_back(CDNSSeedData("kcoin.jonasschnelli.ch", "seed.kcoin.jonasschnelli.ch")); // Jonas Schnelli
-*/
+
+        vSeeds.push_back(CDNSSeedData("52.26.226.168", "52.26.226.168"));
+        vSeeds.push_back(CDNSSeedData("52.26.80.40", "52.26.80.40"));
+
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,45);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,128);
