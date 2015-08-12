@@ -432,8 +432,8 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
     if (vNodes.empty())
         throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "Kcoin is not connected!");
 
-    if (IsInitialBlockDownload())
-        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "Kcoin is downloading blocks...");
+//    if (IsInitialBlockDownload())
+//        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "Kcoin is downloading blocks...");
 
     static unsigned int nTransactionsUpdatedLast;
 
