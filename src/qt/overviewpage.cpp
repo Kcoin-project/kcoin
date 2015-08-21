@@ -81,7 +81,7 @@ public:
         }
         else
         {
-            foreground = option.palette.color(QPalette::Text);
+            foreground = COLOR_GREEN;
         }
         painter->setPen(foreground);
         QString amountText = KcoinUnits::formatWithUnit(unit, amount, true, KcoinUnits::separatorAlways);
